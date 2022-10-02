@@ -1,0 +1,169 @@
+:root{
+    --dark:#251B37;
+    --mid:#372948;
+    --lightPink:#FFCACA;
+    --light:#FFECEF;
+}
+html {
+    height: 100%;
+  }
+body {
+    background-color: var(--light);
+    margin: 0;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 2fr 5fr 1fr;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+  }
+
+  .header{
+    margin-left: 8px;
+    margin-top: 8px;
+    padding-left: 80px;
+    padding-right: 80px;
+    grid-area: header;
+    background-color: var(--mid);
+    color: var(--lightPink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: xx-large;
+    /* cursor: none; */
+  }
+.locationMenu{
+  display: none;
+  position: fixed;
+  left: 35%;
+  top: 40%;
+  height: 200px;
+  width: 300px;
+  background-color: var(--dark);
+  border: 2px solid var(--mid);
+  color: var(--lightPink);
+  border-radius: 5px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0 0 20px;
+}
+
+.blur{
+  filter: blur(8px);
+  pointer-events: none;
+  user-select: none;
+}
+
+  .search{
+    width: 80px;
+    height: 20px;
+    margin: 8px 8px 0 0;
+    border: 0px;
+    border-radius: 5px;
+    border-bottom: 1px var(--lightPink);
+    outline: none;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+  .search:focus{
+    transform: scale(1.1);
+  }
+
+  .content{
+    grid-area: content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  .card{
+    width: 300px;
+    height: 200px;
+    /* border: 1px solid var(--dark); */
+    background-color: var(--dark);
+    border-radius: 5px;
+    display: grid;
+    grid-template-areas: 
+    "icon search search"
+    "icon climate climate"
+    ". temp bin";
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    color: var(--lightPink);
+  }
+  .locationName{
+    padding-right: 10px;
+    grid-area: search;
+    font-size: large;
+    align-self: center;
+    justify-self: flex-end;
+  }
+  
+  .weatherIcon{
+    padding-top: 30%;
+    grid-area: icon;
+    justify-self: center;
+    align-self: flex-start;
+  }
+  .climate{
+    grid-area: climate;
+    justify-self: flex-start;
+    align-self: flex-start;
+    padding-top: 10%;
+  }
+  .temp{
+    grid-area: temp;
+    font-size: x-large;
+    justify-self: flex-start;
+    align-self: flex-start;
+    display: flex;
+    gap: 10px;
+  }
+  .temptype{
+    background-color: var(--light);
+    border: 0;
+    width: 27px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .temptype:hover{
+    background-color: var(--lightPink);
+  }
+  .deleteBtn{
+    grid-area: bin;
+    font-size: x-large;
+    justify-self: center;
+    align-self: flex-start;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 300ms;
+  }
+  .deleteBtn:hover{
+    transform: scale(1.2);
+  }
+  .addCardBtn{
+    height: 40px;
+    width: 40px;
+    background-color: var(--light);
+    border: 1px var(--dark) solid;
+    font-size: xx-large;
+    transition: background-color 300ms;
+  }
+  .addCardBtn:hover{
+    background-color: var(--lightPink);
+    cursor: pointer;
+  }
+  .footer{
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+}
+  .footer a{
+    text-decoration: none;
+    color: var(--dark);
+  }
