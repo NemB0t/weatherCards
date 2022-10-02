@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Cards</title>
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <div class="appName">Weather Cards</div>
+    </div>
+    <div class="content">
+        <button class="addCardBtn">+</button>
+    </div>
+    <template id="weatherCardTemplate">
+        <div class="card">
+            <img src="#" alt="" class="weatherIcon">
+            <div class="locationName"></div>
+            <div class="climate">Enter a location</div>
+            <div class="temp">
+            </div>
+            <div class="deleteBtn">&#x1F5D1</div>
+        </div>
+    </template>
+    <div class="locationMenu">
+        Enter the location below and hit enter to search
+        <input type="text" placeholder="Location ⌕" class="search">
+    </div>
+    <div class="footer">
+        <a href="https://github.com/NemB0t">GithubⒸNembot</a>
+    </div>
+</body>
+</html>
