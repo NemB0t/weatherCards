@@ -134,7 +134,7 @@ function clearElements(element){
 
 async function getWeather(location){
     try{
-        const wpromise = await fetch('http://api.openweathermap.org/data/2.5/weather?q='+location+'&APPID=71385b680d4404874d2a19193f0f5800',{mode: 'cors'});
+        const wpromise = await fetch('https://api.openweathermap.org/data/2.5/weather?q='+location+'&APPID=71385b680d4404874d2a19193f0f5800',{mode: 'cors'});
         if (wpromise.status===400){
             console.log('connection error');
         }
